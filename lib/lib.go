@@ -13,6 +13,11 @@ import (
 	"google.golang.org/protobuf/reflect/protoreflect"
 )
 
+// TODO: protobuf registry registers globaltypes with filename whereas schemaRegistry stores by Int32
+var subjectMap = map[string]string{
+	"100003": "orders",
+}
+
 // SchemaRegistryProtobufResolver
 type SchemaRegistryProtobufResolver struct {
 	schemaRegistry      srclient.SchemaRegistryClient
@@ -85,7 +90,7 @@ func (reg *SchemaRegistryProtobufResolver) ResolveProtobuf(
 
 	var mt protoreflect.MessageType
 	reg.protobufRegistry.RangeMessages(func(messageType protoreflect.MessageType) bool {
-		if string(messageType.Descriptor().Name()) == msg.GetName() {
+		if string(messageType.Descriptor().Name()) == subjectMap[msg.GetName()] {
 			mt = messageType
 			return false
 		}

@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/rverma-nsl/kafka-schemaregistry-protobuf/lib"
-	"github.com/rverma-nsl/kafka-schemaregistry-protobuf/schema"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/rverma-nsl/kafka-schemaregistry-protobuf/lib"
+	"github.com/rverma-nsl/kafka-schemaregistry-protobuf/schema"
 
 	"github.com/briandowns/spinner"
 	"github.com/confluentinc/confluent-kafka-go/kafka"
@@ -157,6 +158,10 @@ var rootCmd = &cobra.Command{
 			"group.id":              consumerGroup,
 			"session.timeout.ms":    6000,
 			"auto.offset.reset":     offset,
+			"security.protocol":     "SASL_SSL",
+			"sasl.mechanisms":       "PLAIN",
+			"sasl.username":         "xx",
+			"sasl.password":         "xx",
 		})
 
 		if err != nil {
@@ -168,7 +173,7 @@ var rootCmd = &cobra.Command{
 
 		c.SubscribeTopics(kafkaTopics, nil)
 		schemaRegistryClient := srclient.CreateSchemaRegistryClient("https://psrc-3w372.australia-southeast1.gcp.confluent.cloud")
-		schemaRegistryClient.SetCredentials("", "")
+		schemaRegistryClient.SetCredentials("ss", "ss")
 		protobufResolver := lib.NewSchemaRegistryProtobufResolver(*schemaRegistryClient, protoregistry.GlobalTypes, lib.ValueDeserialization)
 		deserializer := lib.NewProtobufDeserializer(protobufResolver)
 
