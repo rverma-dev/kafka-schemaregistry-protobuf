@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
+	"github.com/rverma-nsl/kafka-schemaregistry-protobuf/lib"
+	"github.com/rverma-nsl/kafka-schemaregistry-protobuf/schema"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
-	"platform-benchmarks/kafka-streams/lib"
-	"platform-benchmarks/kafka-streams/schema"
 	"syscall"
 	"time"
 
@@ -168,7 +168,7 @@ var rootCmd = &cobra.Command{
 
 		c.SubscribeTopics(kafkaTopics, nil)
 		schemaRegistryClient := srclient.CreateSchemaRegistryClient("https://psrc-3w372.australia-southeast1.gcp.confluent.cloud")
-		schemaRegistryClient.SetCredentials("","")
+		schemaRegistryClient.SetCredentials("", "")
 		protobufResolver := lib.NewSchemaRegistryProtobufResolver(*schemaRegistryClient, protoregistry.GlobalTypes, lib.ValueDeserialization)
 		deserializer := lib.NewProtobufDeserializer(protobufResolver)
 
