@@ -3,7 +3,7 @@ module github.com/rverma-nsl/kafka-schemaregistry-protobuf
 go 1.18
 
 require (
-	github.com/briandowns/spinner v1.18.1
+	github.com/briandowns/spinner v1.19.0
 	github.com/confluentinc/confluent-kafka-go v1.8.2
 	github.com/jhump/protoreflect v1.12.0
 	github.com/riferrei/srclient v0.5.4
