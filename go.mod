@@ -7,7 +7,7 @@ require (
 	github.com/confluentinc/confluent-kafka-go v1.8.2
 	github.com/jhump/protoreflect v1.12.0
 	github.com/riferrei/srclient v0.5.4
-	github.com/spf13/cobra v1.4.0
+	github.com/spf13/cobra v1.5.0
 	google.golang.org/protobuf v1.28.1
 )
 
