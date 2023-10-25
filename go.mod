@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/briandowns/spinner v1.19.0
 	github.com/confluentinc/confluent-kafka-go v1.9.2
-	github.com/confluentinc/confluent-kafka-go/v2 v2.1.0
+	github.com/confluentinc/confluent-kafka-go/v2 v2.3.0
 	github.com/jhump/protoreflect v1.14.1
 	github.com/riferrei/srclient v0.5.4
 	github.com/spf13/cobra v1.5.0
