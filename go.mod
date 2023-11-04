@@ -8,7 +8,7 @@ require (
 	github.com/confluentinc/confluent-kafka-go/v2 v2.1.0
 	github.com/jhump/protoreflect v1.14.1
 	github.com/riferrei/srclient v0.5.4
-	github.com/spf13/cobra v1.5.0
+	github.com/spf13/cobra v1.8.0
 	google.golang.org/protobuf v1.30.0
 )
 
@@ -16,7 +16,7 @@ require (
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
-	github.com/inconshreveable/mousetrap v1.0.0 // indirect
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/linkedin/goavro/v2 v2.11.1 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.16 // indirect
