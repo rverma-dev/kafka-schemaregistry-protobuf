@@ -1,6 +1,6 @@
 module github.com/rverma-nsl/kafka-schemaregistry-protobuf
 
-go 1.19
+go 1.23
 
 require (
 	github.com/briandowns/spinner v1.19.0
@@ -9,7 +9,7 @@ require (
 	github.com/jhump/protoreflect v1.14.1
 	github.com/riferrei/srclient v0.5.4
 	github.com/spf13/cobra v1.5.0
-	google.golang.org/protobuf v1.30.0
+	google.golang.org/protobuf v1.36.11
 )
 
 require (
